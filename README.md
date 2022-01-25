@@ -48,8 +48,21 @@ az storage container create \
   --account-key $HOT_KEY
 ```
 
+# 6. Download test file to upload and upload it to the blob
+```
+cd $HOME
+git clone https://github.com/developer-onizuka/azureBlob sample
+```
+```
+az storage blob upload-batch \
+  --destination specifications \
+  --pattern "*.md" \
+  --source ~/sample \
+  --account-name $HOT_STORAGE_NAME \
+  --account-key $HOT_KEY
+```
 
 
-# 3. Go to Azure Portal
+# X. Go to Azure Portal
 https://portal.azure.com/#home
 
