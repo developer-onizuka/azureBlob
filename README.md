@@ -60,7 +60,7 @@ git clone https://github.com/developer-onizuka/azureBlob sample
 ```
 ```
 az storage blob upload-batch \
-  --destination specifications \
+  --destination myfirstblob \
   --pattern "*.md" \
   --source ~/sample \
   --account-name $HOT_STORAGE_NAME \
