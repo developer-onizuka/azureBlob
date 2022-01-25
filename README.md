@@ -61,7 +61,7 @@ git clone https://github.com/developer-onizuka/azureBlob sample
 ```
 az storage blob upload-batch \
   --destination myfirstblob \
-  --pattern "*.md" \
+  --pattern "test*.md" \
   --source ~/sample \
   --account-name $HOT_STORAGE_NAME \
   --account-key $HOT_KEY
