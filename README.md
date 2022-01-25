@@ -7,11 +7,16 @@ $ cd azureBlob
 $ sudo docker build -t azureblob .
 ```
 
-# 2. Run the container
+# 2. Run the container and login to your account. You access to the URL and enter the code for autenticaion.
 ```
 $ sudo docker run -it --rm --name azureblob azureblob:latest
 bash-5.1# 
+bash-5.1# az login
+To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code XxXxXxXxX to authenticate.
 ```
+
+The followings could be done in the container you invoked in previous command.
+---
 
 # 3. Create Storage Account
 ```
