@@ -115,7 +115,7 @@ az storage blob upload-batch \
   --auth-mode key
 ```
 
-# 7. Delete Blog data
+# 7. Delete Blob data
 ```
 az storage blob delete-batch \
    --source myfirstblob \
