@@ -73,6 +73,14 @@ Azure Storage provides extensions for Azure CLI that enable you to specify how y
 - With the account access key or a shared access signature (SAS) token.
 - With an Azure Active Directory (Azure AD) security principal. Microsoft recommends using Azure AD credentials for superior security and ease of use.
 
+
+|  | Possibility of leaking | Impact |
+| :---: | :---: | :---: |
+| Storage acount Access key | Hard coded usernames, passwords, tokens and other secrets in the source code. | If leaked, it can be used by anyone who obtains it, which can potentially compromise your storage account. But even anyone who obtains Access key can not create Virtual Machines. Because it is only availble for Storage Account. |
+| SAS | Hard coded usernames, passwords, tokens and other secrets in the source code. | If leaked, it can be used by anyone who obtains it, which can potentially compromise your storage account. But it is safer than Access key because it is a connection string for accessing the storage account with constraints such as expiration date and accessible IP address. |
+| Azure AD | no | - |
+
+
 # 6-1. Using account access-key
 ```
 az storage blob upload-batch \
@@ -100,7 +108,7 @@ az storage blob upload-batch \
   --sas-token $HOT_SAS_TOKEN
 ```
 
-# 6-3. Using RBAC instead of account Access key and SAS token
+# 6-3. Using Azure AD's RBAC instead of account Access key and SAS token
 With an Azure Active Directory (Azure AD) security principal.
 
 - Set the --auth-mode parameter to login to sign in using an Azure AD security principal (recommended). You could not find any Access Keys in the az command below:
