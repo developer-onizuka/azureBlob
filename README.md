@@ -111,7 +111,7 @@ With an Azure Active Directory (Azure AD) security principal.
 
 - Set the --auth-mode parameter to login to sign in using an Azure AD security principal (recommended). 
 
-"login" mode will directly use your login credentials for the authentication. It means you need authorization if your login account is assigned required RBAC roles such as "Storage Blob Data Contributor".
+  > "login" mode will directly use your login credentials for the authentication. It means you need authorization if your login account is assigned required RBAC roles such as "Storage Blob Data Contributor".
 ```
 az storage blob upload-batch \
   --destination myfirstblob \
