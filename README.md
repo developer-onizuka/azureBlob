@@ -75,8 +75,8 @@ Azure Storage provides extensions for Azure CLI that enable you to specify how y
 
 |  | Possibility of leaking | Impact |
 | :--- | :--- | :--- |
-| Storage acount Access key | Hard coded usernames, passwords, tokens and other secrets in the source code. | If leaked, it can be used by anyone who obtains it, which can potentially compromise your storage account. But even anyone who obtains Access key can not create Virtual Machines. Because it is only availble for Storage Account. |
-| Shared access signature (SAS) token | Hard coded usernames, passwords, tokens and other secrets in the source code. | If leaked, it can be used by anyone who obtains it, which can potentially compromise your storage account. But it is safer than Access key because it is a connection string for accessing the storage account with constraints such as expiration date and accessible IP address. |
+| Storage acount Access key<br>(--account-key) | Hard coded usernames, passwords, tokens and other secrets in the source code. | If leaked, it can be used by anyone who obtains it, which can potentially compromise your storage account. But even anyone who obtains Access key can not create Virtual Machines. Because it is only availble for Storage Account. |
+| Shared access signature (SAS) token<br>(--sas-token) | Hard coded usernames, passwords, tokens and other secrets in the source code. | If leaked, it can be used by anyone who obtains it, which can potentially compromise your storage account. But it is safer than Access key because it is a connection string for accessing the storage account with constraints such as expiration date and accessible IP address. |
 | Azure AD<br>(--auth-mode) | No | - |
 | Managed ID | No | - |
 
