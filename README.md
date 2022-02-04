@@ -124,6 +124,33 @@ az storage blob delete-batch \
    --auth-mode key
 ```
 
+# 8. AzCopy
+```
+```
+COOL_STORAGE_NAME=coolstorage$RANDOM
+LOCATION=japaneast
+RESOURCE_GROUP=xxxx-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+```
+```
+az storage account create \
+  --location $LOCATION \
+  --name $COOL_STORAGE_NAME \
+  --resource-group $RESOURCE_GROUP \
+  --sku Standard_RAGRS \
+  --kind BlobStorage \
+  --access-tier Cool
+```
+```
+COOL_SAS_TOKEN=<Use the key created in azure portal>
+```
+```
+azcopy make https://$COOL_STORAGE_NAME.blob.core.windows.net/azcopy-archive$COOL_SAS_TOKEN
+```
+```
+azcopy copy https://$HOT_STORAGE_NAME.blob.core.windows.net/myfirstblob/test1.md$HOT_SAS_TOKEN https://$COOL_STORAGE_NAME.blob.core.windows.net/azcopy-archive$COOL_SAS_TOKEN
+```
+
+
 # X. Go to Azure Portal
 https://portal.azure.com/#home
 
