@@ -94,6 +94,7 @@ az storage blob upload-batch \
 # 6-3. Using RBAC instead of Account Key and SAS token
 With an Azure Active Directory (Azure AD) security principal.
 
+- Set the --auth-mode parameter to login to sign in using an Azure AD security principal (recommended). You could not find any Access Keys in the az command below:
 ```
 az storage blob upload-batch \
   --destination myfirstblob \
@@ -102,6 +103,8 @@ az storage blob upload-batch \
   --account-name $HOT_STORAGE_NAME \
   --auth-mode login
 ```
+
+- Set the --auth-mode parameter to the legacy key value to attempt to retrieve the account access key to use for authorization. If you omit the --auth-mode parameter, then the Azure CLI also attempts to retrieve the access key.
 ```
 az storage blob upload-batch \
   --destination myfirstblob \
