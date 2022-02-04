@@ -84,6 +84,23 @@ az storage blob upload-batch \
   --sas-token $SAS_TOKEN
 ```
 
+# 6-2. Using RBAC instead of Account Key
+```
+az storage blob upload-batch \
+  --destination myfirstblob \
+  --pattern "test*.md" \
+  --source ~/sample \
+  --account-name $HOT_STORAGE_NAME \
+  --auth-mode login
+```
+```
+az storage blob upload-batch \
+  --destination myfirstblob \
+  --pattern "test*.md" \
+  --source ~/sample \
+  --account-name $HOT_STORAGE_NAME \
+  --auth-mode key
+```
 
 # X. Go to Azure Portal
 https://portal.azure.com/#home
