@@ -67,6 +67,18 @@ az storage blob upload-batch \
   --account-key $HOT_KEY
 ```
 
+# 6-1. Using SAS token instead of Account Key
+A shared access signature (SAS) is a URI that grants restricted access to an Azure Storage container. Use it when you want to grant access to storage account resources for a specific time range without sharing your storage account key. Let's create like below:
+![azureBlob1](https://github.com/developer-onizuka/azureBlob/blob/master/azureBlob1.png)
+```
+az storage blob upload-batch \
+  --destination myfirstblob \
+  --pattern "test*.md" \
+  --source ~/sample \
+  --account-name $HOT_STORAGE_NAME \
+  --sas-token $SAS_TOKEN
+```
+
 
 # X. Go to Azure Portal
 https://portal.azure.com/#home
