@@ -53,6 +53,15 @@ az storage container create \
   --account-key $HOT_KEY
 ```
 
+# 5-1. Create a container named "myfirstblob" instead of using account-key
+You can use --auto-mode instead of --account-key.
+```
+az storage container create \
+  --name myfirstblob \
+  --account-name $HOT_STORAGE_NAME \
+  --auth-mode login
+```
+
 # 6. Download test file to upload and upload it to the blob
 ```
 cd $HOME
