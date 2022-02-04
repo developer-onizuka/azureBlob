@@ -53,7 +53,7 @@ az storage container create \
   --account-key $HOT_KEY
 ```
 
-# 5-1. Create a container named "myfirstblob" instead of using account-key
+# 5-1. Create a container named "myfirstblob" instead of using account Access key
 You can use --auto-mode instead of --account-key.
 ```
 az storage container create \
@@ -73,7 +73,7 @@ Azure Storage provides extensions for Azure CLI that enable you to specify how y
 - With the account access key or a shared access signature (SAS) token.
 - With an Azure Active Directory (Azure AD) security principal. Microsoft recommends using Azure AD credentials for superior security and ease of use.
 
-# 6-1. Using Access Key
+# 6-1. Using account access-key
 ```
 az storage blob upload-batch \
   --destination myfirstblob \
@@ -83,7 +83,7 @@ az storage blob upload-batch \
   --account-key $HOT_KEY
 ```
 
-# 6-2. Using SAS token instead of Account Key
+# 6-2. Using SAS token instead of account Access key
 A shared access signature (SAS) is a URI that grants restricted access to an Azure Storage container. Use it when you want to grant access to storage account resources for a specific time range without sharing your storage account key. Let's create like below:
 
 ![azureBlob1](https://github.com/developer-onizuka/azureBlob/blob/master/azureBlob1.png)
@@ -100,7 +100,7 @@ az storage blob upload-batch \
   --sas-token $HOT_SAS_TOKEN
 ```
 
-# 6-3. Using RBAC instead of Account Key and SAS token
+# 6-3. Using RBAC instead of account Access key and SAS token
 With an Azure Active Directory (Azure AD) security principal.
 
 - Set the --auth-mode parameter to login to sign in using an Azure AD security principal (recommended). You could not find any Access Keys in the az command below:
