@@ -115,6 +115,15 @@ az storage blob upload-batch \
   --auth-mode key
 ```
 
+# 7. Delete Blog data
+```
+az storage blob delete-batch \
+   --source myfirstblob \
+   --pattern "test*.md" \
+   --account-name $HOT_STORAGE_NAME \
+   --auth-mode key
+```
+
 # X. Go to Azure Portal
 https://portal.azure.com/#home
 
