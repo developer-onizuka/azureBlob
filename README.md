@@ -142,11 +142,13 @@ COOL_SAS_TOKEN=<Use the key created in azure portal, See also #6-2>
 ```
 
 Create the blob named azcopy-archive.
+---
 ```
 azcopy make https://$COOL_STORAGE_NAME.blob.core.windows.net/azcopy-archive$COOL_SAS_TOKEN
 ```
 
 Copy test1.md file from myfirstblob to azcopy-archive using sas-token.
+---
 ```
 azcopy copy https://$HOT_STORAGE_NAME.blob.core.windows.net/myfirstblob/test1.md$HOT_SAS_TOKEN https://$COOL_STORAGE_NAME.blob.core.windows.net/azcopy-archive$COOL_SAS_TOKEN
 ```
