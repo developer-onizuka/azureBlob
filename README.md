@@ -58,6 +58,13 @@ az storage container create \
 cd $HOME
 git clone https://github.com/developer-onizuka/azureBlob sample
 ```
+
+Azure Storage provides extensions for Azure CLI that enable you to specify how you want to authorize operations on blob data. You can authorize data operations in the following ways:
+
+- With the account access key or a shared access signature (SAS) token.
+- With an Azure Active Directory (Azure AD) security principal. Microsoft recommends using Azure AD credentials for superior security and ease of use.
+
+# 6-1. Using Access Key
 ```
 az storage blob upload-batch \
   --destination myfirstblob \
@@ -67,7 +74,7 @@ az storage blob upload-batch \
   --account-key $HOT_KEY
 ```
 
-# 6-1. Using SAS token instead of Account Key
+# 6-2. Using SAS token instead of Account Key
 A shared access signature (SAS) is a URI that grants restricted access to an Azure Storage container. Use it when you want to grant access to storage account resources for a specific time range without sharing your storage account key. Let's create like below:
 
 ![azureBlob1](https://github.com/developer-onizuka/azureBlob/blob/master/azureBlob1.png)
@@ -84,7 +91,9 @@ az storage blob upload-batch \
   --sas-token $SAS_TOKEN
 ```
 
-# 6-2. Using RBAC instead of Account Key
+# 6-3. Using RBAC instead of Account Key and SAS token
+With an Azure Active Directory (Azure AD) security principal.
+
 ```
 az storage blob upload-batch \
   --destination myfirstblob \
