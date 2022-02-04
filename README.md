@@ -124,7 +124,7 @@ az storage blob upload-batch \
   --auth-mode key
 ```
 
-# 7. AzCopy using SAS token
+# 7. Create destination for AzCopy
 ```
 COOL_STORAGE_NAME=coolstorage$RANDOM
 ```
@@ -141,20 +141,18 @@ az storage account create \
 COOL_SAS_TOKEN=<Use the key created in azure portal, See also #6-2>
 ```
 
-Create the blob named azcopy-archive.
----
+# 8. Create the blob named azcopy-archive thru AzCopy command
 ```
 azcopy make https://$COOL_STORAGE_NAME.blob.core.windows.net/azcopy-archive$COOL_SAS_TOKEN
 ```
 
-Copy test1.md file from myfirstblob to azcopy-archive using sas-token.
----
+# 9. AzCopy from myfirstblob to azcopy-archive using sas-token
 ```
 azcopy copy https://$HOT_STORAGE_NAME.blob.core.windows.net/myfirstblob/test1.md$HOT_SAS_TOKEN https://$COOL_STORAGE_NAME.blob.core.windows.net/azcopy-archive$COOL_SAS_TOKEN
 ```
 
 
-# 8. Delete Blob data
+# 10. Delete Blob data
 ```
 az storage blob delete-batch \
    --source myfirstblob \
