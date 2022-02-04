@@ -127,8 +127,6 @@ az storage blob upload-batch \
 # 7. AzCopy using SAS token
 ```
 COOL_STORAGE_NAME=coolstorage$RANDOM
-LOCATION=japaneast
-RESOURCE_GROUP=xxxx-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 ```
 ```
 az storage account create \
