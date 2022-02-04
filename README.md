@@ -80,7 +80,7 @@ A shared access signature (SAS) is a URI that grants restricted access to an Azu
 ![azureBlob1](https://github.com/developer-onizuka/azureBlob/blob/master/azureBlob1.png)
 
 ```
-SAS_TOKEN=<Use the key created in azure portal>
+HOT_SAS_TOKEN=<Use the key created in azure portal>
 ```
 ```
 az storage blob upload-batch \
@@ -88,7 +88,7 @@ az storage blob upload-batch \
   --pattern "test*.md" \
   --source ~/sample \
   --account-name $HOT_STORAGE_NAME \
-  --sas-token $SAS_TOKEN
+  --sas-token $HOT_SAS_TOKEN
 ```
 
 # 6-3. Using RBAC instead of Account Key and SAS token
